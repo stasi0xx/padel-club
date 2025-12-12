@@ -1,26 +1,84 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer utilities {
+  /* Ukrywanie scrollbara dla Chrome, Safari i Opera */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Ukrywanie scrollbara dla IE, Edge i Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme {
+  /* Definiujemy kolory firmowe */
+  /* Ten kolor jest pobrany z logo - intensywny niebieski */
+  --color-primary: #1d4ed8;
+  --color-primary-hover: #1e40af;
+  --font-montserrat: Montserrat;
+  --font-inter: 'Inter';
+  /* Definiujemy fonty zadeklarowane w layout.tsx */
+  --font-heading: var(--font-montserrat);
+  --font-sans: var(--font-inter);
+
+  /* Opcjonalnie: ustawienia kontenera dla spójnych marginesów */
+  --spacing-container: 1rem;
+}
+
+/* Style globalne */
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: white;
+    color: #111; /* Lekko zmiękczona czerń dla lepszego czytania */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase; /* Logo ma wielkie litery, nagłówki też będą wyglądać dobrze */
+    letter-spacing: -0.02em;
+  }
+}
+
+
+/* Style dla treści Rich Text (Edytor + Wyświetlanie Newsów) */
+.prose h2 {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  color: #111;
+}
+
+.prose h3 {
+  font-size: 1.25em;
+  font-weight: 600;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  color: #333;
+}
+
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+.prose ol {
+  list-style-type: decimal;
+  padding-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+.prose p {
+  margin-bottom: 0.75em;
+  line-height: 1.6;
+}
+
+.prose strong {
+  font-weight: 700;
 }
