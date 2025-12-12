@@ -11,6 +11,7 @@ interface NewsItem {
     title: string;
     excerpt: string;
     image_url: string;
+    slug: string;
     created_at: string;
 }
 
@@ -56,6 +57,12 @@ export function NewsHome() {
                 {/* GRID */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {news.map((item) => (
+                        <Link
+                            key={item.id}
+                            // TUTAJ ZMIANA: Linkujemy do dynamicznego sluga
+                            href={`/app/(public)/aktualnosci/${item.slug}`}
+                            className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 flex flex-col h-full"
+                        >
                         <div key={item.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 flex flex-col h-full">
                             <div className="relative h-64 bg-gray-200">
                                 {item.image_url ? (
@@ -76,6 +83,7 @@ export function NewsHome() {
                                 <p className="text-gray-500 text-sm line-clamp-3 mb-4 flex-grow">{item.excerpt}</p>
                             </div>
                         </div>
+                        </Link>
                     ))}
                 </div>
             </div>

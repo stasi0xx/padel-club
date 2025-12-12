@@ -19,49 +19,49 @@ const offerItems = [
         title: "Wydarzenia",
         description: "Eventy integracyjne i dni otwarte.",
         icon: CalendarDays,
-        href: "/wydarzenia",
-        image: "/offer/events.webp", // <--- Tutaj ścieżka do Twojego zdjęcia
+        href: "/oferta/wydarzenia", // <--- ZMIANA
+        image: "/offer/events.webp",
     },
     {
         title: "Grupy Treningowe",
         description: "Regularne zajęcia dopasowane do poziomu.",
         icon: Users,
-        href: "/treningi",
+        href: "/oferta/treningi", // <--- ZMIANA
         image: "/offer/training.webp",
     },
     {
         title: "Padel dla Dzieci",
         description: "Akademia juniora – nauka przez zabawę.",
         icon: Smile,
-        href: "/dla-dzieci",
+        href: "/oferta/dla-dzieci", // <--- ZMIANA
         image: "/offer/kids.webp",
     },
     {
         title: "Liga",
         description: "Długoterminowe rozgrywki z awansami.",
         icon: Trophy,
-        href: "/liga",
+        href: "/oferta/liga", // <--- ZMIANA
         image: "/offer/league.webp",
     },
     {
         title: "Treningi Indywidualne",
         description: "Intensywna praca 1 na 1 z trenerem.",
         icon: User,
-        href: "/treningi-indywidualne",
+        href: "/oferta/treningi-indywidualne", // <--- ZMIANA
         image: "/offer/individual.webp",
     },
     {
         title: "Turnieje",
         description: "Walka o puchary i nagrody.",
         icon: Medal,
-        href: "/turnieje",
+        href: "/oferta/turnieje", // <--- ZMIANA
         image: "/offer/tournament.webp",
     },
     {
         title: "Sklep",
         description: "Sprzęt i akcesoria na miejscu.",
         icon: ShoppingBag,
-        href: "/sklep",
+        href: "/oferta/sklep", // <--- ZMIANA
         image: "/offer/shop.webp",
     },
 ];
@@ -88,7 +88,7 @@ const itemVariants: Variants = {
 
 export function Offer() {
     return (
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-white" id="oferta" >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <motion.div

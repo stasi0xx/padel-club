@@ -60,7 +60,7 @@ export function Hero() {
                         Rezerwuj online
                     </a>
                     <Link
-                        href="#Pricing"
+                        href="/#Pricing"
                         className="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-bold text-lg rounded-full transition-colors uppercase tracking-wide"
                     >
                         Cennik

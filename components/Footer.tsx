@@ -55,7 +55,7 @@ export function Footer() {
                                 <Instagram size={20} />
                             </a>
                             <a
-                                href="https://facebook.com" // Uzupełnij jeśli mają FB
+                                href="https://www.facebook.com/profile.php?id=100070520303087" // Uzupełnij jeśli mają FB
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[var(--color-primary)] hover:text-white transition-all duration-300"
@@ -156,10 +156,10 @@ export function Footer() {
             {/* COPYRIGHT BAR */}
             <div className="bg-black border-t border-gray-900">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600">
-                    <p>© {currentYear} Gdynia Padel Club. Wszelkie prawa zastrzeżone.</p>
+                    <p>© {currentYear} Gdynia Padel Club. Wszelkie prawa zastrzeżone. Design & Maintenance by Stanisław Korycki </p>
                     <div className="flex gap-6">
                         <Link href="/polityka-prywatnosci" className="hover:text-gray-400">Polityka Prywatności</Link>
-                        <Link href="/cookies" className="hover:text-gray-400">Pliki Cookies</Link>
+                        <Link href="/admin/add" className="hover:text-gray-400">Logowanie</Link>
                     </div>
                 </div>
             </div>

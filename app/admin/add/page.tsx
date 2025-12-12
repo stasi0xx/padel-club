@@ -4,12 +4,13 @@ import { useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import { Upload, Loader2, Image as ImageIcon } from "lucide-react";
-import RichTextEditor from "@/components/admin/RichTextEditor"; // <--- Import
+import RichTextEditor from "@/components/admin/RichTextEditor";
+import { slugify } from "@/lib/utils"; // <--- Import funkcji
 
 export default function AddNewsPage() {
     const [title, setTitle] = useState("");
-    const [excerpt, setExcerpt] = useState(""); // Krótki opis (zwykły tekst)
-    const [content, setContent] = useState(""); // Pełna treść (HTML z edytora)
+    const [excerpt, setExcerpt] = useState("");
+    const [content, setContent] = useState("");
     const [file, setFile] = useState<File | null>(null);
     const [loading, setLoading] = useState(false);
 
@@ -21,14 +22,32 @@ export default function AddNewsPage() {
         setLoading(true);
 
         try {
+            // 1. Generowanie sluga
+            const slug = slugify(title);
+
+            // Sprawdź czy slug jest unikalny (opcjonalne, ale dobra praktyka)
+            const { data: existing } = await supabase
+                .from('news')
+                .select('slug')
+                .eq('slug', slug)
+                .single();
+
+            if (existing) {
+                alert("Taki tytuł już istnieje! Zmień go nieco.");
+                setLoading(false);
+                return;
+            }
+
             let imageUrl = "";
             if (file) {
                 const fileExt = file.name.split('.').pop();
-                const fileName = `${Date.now()}.${fileExt}`;
+                const fileName = `${slug}-${Date.now()}.${fileExt}`; // Lepsza nazwa pliku
                 const { error: uploadError } = await supabase.storage
                     .from('news-images')
                     .upload(fileName, file);
+
                 if (uploadError) throw uploadError;
+
                 const { data: urlData } = supabase.storage
                     .from('news-images')
                     .getPublicUrl(fileName);
@@ -40,8 +59,9 @@ export default function AddNewsPage() {
                 .insert([
                     {
                         title,
-                        excerpt, // Krótki opis na kafelki
-                        content, // Pełna treść HTML z formatowaniem
+                        slug, // <--- ZAPISUJEMY SLUG
+                        excerpt,
+                        content,
                         image_url: imageUrl,
                     }
                 ]);
@@ -58,7 +78,9 @@ export default function AddNewsPage() {
         }
     };
 
+    // ... (Reszta JSX bez zmian) ...
     return (
+        // ... Twój obecny JSX ...
         <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-sm">
                 <h1 className="text-3xl font-bold mb-8 text-gray-900">Dodaj Aktualność</h1>
@@ -77,11 +99,10 @@ export default function AddNewsPage() {
                         />
                     </div>
 
-                    {/* Krótki opis (Zwykłe pole) */}
+                    {/* Krótki opis */}
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
                             Krótki opis (na kafelek)
-                            <span className="text-gray-400 font-normal ml-2 text-xs">Bez formatowania, max 2-3 zdania.</span>
                         </label>
                         <textarea
                             required
@@ -93,17 +114,16 @@ export default function AddNewsPage() {
                         />
                     </div>
 
-                    {/* Pełna Treść (RICH TEXT EDITOR) */}
+                    {/* Pełna Treść */}
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">Pełna treść artykułu</label>
-                        {/* Wstawiamy nasz komponent */}
                         <RichTextEditor
                             value={content}
                             onChange={setContent}
                         />
                     </div>
 
-                    {/* Upload Zdjęcia */}
+                    {/* Upload */}
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">Zdjęcie okładkowe</label>
                         <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:bg-gray-50 transition-colors relative cursor-pointer">

@@ -43,7 +43,7 @@ export default function HowToStartPage() {
                         Rezerwacja zajmuje tylko minutę. Do zobaczenia na korcie!
                     </p>
                     <a
-                        href="https://kluby.org"
+                        href="https://kluby.org/gdynia-padel-club/rezerwacje"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block bg-white text-[var(--color-primary)] px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-gray-100 transition-transform hover:scale-105"

@@ -106,7 +106,7 @@ const itemVariants = {
 
 export function Pricing() {
     return (
-        <section className="py-24 bg-gray-50 border-t border-gray-200" id="cennik">
+        <section className="py-24 bg-gray-50 border-t border-gray-200" id="Pricing">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <motion.div

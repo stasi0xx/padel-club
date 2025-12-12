@@ -1,17 +1,13 @@
 import type { Metadata } from "next";
 import { Montserrat, Inter } from "next/font/google";
 import "./globals.css";
-import {Navbar} from "@/components/Navbar";
-import {Footer} from "@/components/Footer";
 
-// Konfiguracja fontu nagłówkowego (zbliżony do logo)
 const montserrat = Montserrat({
     variable: "--font-montserrat",
     subsets: ["latin"],
-    weight: ["600", "700", "800"], // Grubości dla nagłówków
+    weight: ["600", "700", "800"],
 });
 
-// Konfiguracja fontu treści
 const inter = Inter({
     variable: "--font-inter",
     subsets: ["latin"],
@@ -29,13 +25,12 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="pl">
+        <html lang="pl" className="scroll-smooth">
         <body
             className={`${montserrat.variable} ${inter.variable} antialiased bg-white text-black`}
         >
-        <Navbar />
+        {/* Tutaj renderujemy tylko dzieci. Navbar i Footer znikają stąd. */}
         {children}
-        <Footer />
         </body>
         </html>
     );
