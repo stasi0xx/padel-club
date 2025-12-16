@@ -6,6 +6,7 @@ import {
     User,
     Medal,
     ShoppingBag,
+    PartyPopper,
     LucideIcon
 } from "lucide-react";
 
@@ -31,17 +32,35 @@ export interface OfferDetail {
 }
 
 export const offersData: OfferDetail[] = [
-    // ... Inne oferty bez zmian (Wydarzenia, Grupy, Dzieci, Liga) ...
     {
         slug: "wydarzenia",
-        title: "Wydarzenia i Eventy",
-        subtitle: "Budujemy społeczność nie tylko na korcie",
+        title: "Formaty Gry i Wydarzenia",
+        subtitle: "Mexicano, Americano, Nocne Granie",
         image: "/offer/events.webp",
-        icon: CalendarDays,
-        description: `<p>W Gdynia Padel Club nie chodzi tylko o sport, ale o ludzi...</p>`,
-        features: ["Dni otwarte", "Imprezy integracyjne", "Eventy firmowe", "Urodziny na korcie"],
-        ctaLink: "/kontakt",
-        ctaText: "Zapytaj o event",
+        icon: PartyPopper,
+        description: `
+            <p class="mb-6">Nie wiesz jak zacząć grać z innymi? Nasze wydarzenia są właśnie po to.</p>
+            
+            <h4 class="text-xl font-bold text-gray-900 mt-6 mb-2">🇲🇽 Mexicano – Jak to działa?</h4>
+            <p class="mb-4">Zapisujesz się sam. Gramy mecze na określoną liczbę punktów (np. 32 piłki). Każdy punkt, który zdobędziesz w meczu, trafia na Twoje konto indywidualne. Po meczu zmieniamy pary – system dobiera Cię z osobami, które mają podobny wynik.</p>
+
+            <h4 class="text-xl font-bold text-gray-900 mt-6 mb-2">🇺🇸 Americano – Czym się różni?</h4>
+            <p class="mb-4">System punktacji jest ten sam, ale dobór par jest LOSOWY. Tutaj każdy gra z każdym, niezależnie od umiejętności. To najlepsza opcja na integrację.</p>
+            
+            <h4 class="text-xl font-bold text-gray-900 mt-6 mb-2">🌙 Nocne Granie</h4>
+            <p class="mb-4">To połączenie turnieju z imprezą. Gramy Mexicano lub Americano przy muzyce serwowanej przez <strong>DJ-a</strong>. Wpisowe obejmuje udział w turnieju oraz poczęstunek (pizza lub grill).</p>
+            
+            <h4 class="text-xl font-bold text-gray-900 mt-6 mb-2">🧘‍♀️ Pilates & Padel</h4>
+            <p class="mb-4">Kompleksowy poranek dla ciała i ducha. Pakiet obejmuje: 1h pilatesu, 1h gry w padla (ze wsparciem trenera i sprzętem), a po wysiłku – <strong>wspólne śniadanie i kawę</strong>. Każdy uczestnik otrzymuje upominek i zdjęcia z wydarzenia. Poziom gry nie ma znaczenia!</p>
+        `,
+        features: [
+            "Zapisy bez partnera",
+            "Każda piłka to punkt",
+            "DJ i Grill na Nocnym Graniu",
+            "Śniadanie na Pilatesie" // Dodano kluczowy wyróżnik
+        ],
+        ctaLink: "https://kluby.org/gdynia-padel-club/wydarzenia",
+        ctaText: "Zapisz się",
     },
     {
         slug: "treningi",
@@ -50,14 +69,14 @@ export const offersData: OfferDetail[] = [
         image: "/offer/training.webp",
         icon: Users,
         description: `<p>Nasze zajęcia grupowe to idealny balans...</p>`,
-        features: ["Grupy 3-4 osobowe", "Poziomy A, B, C", "Stałe terminy", "Profesjonalna kadra"],
-        ctaLink: "https://kluby.org/gdynia-padel-club/grafik",
+        features: ["Grupy 3-4 osobowe", "Poziomy B, C", "Stałe terminy", "Profesjonalna kadra"],
+        ctaLink: "https://kluby.org/gdynia-padel-club/wydarzenia",
         ctaText: "Sprawdź grafik",
     },
     {
         slug: "dla-dzieci",
         title: "Padel dla Dzieci",
-        subtitle: "Akademia Juniora",
+        subtitle: "Treningi i mini turnieje",
         image: "/offer/kids.webp",
         icon: Smile,
         description: `<p>Padel to jeden z najbezpieczniejszych sportów...</p>`,

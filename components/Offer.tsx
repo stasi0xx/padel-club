@@ -17,7 +17,7 @@ import { motion, Variants } from "framer-motion";
 const offerItems = [
     {
         title: "Wydarzenia",
-        description: "Eventy integracyjne i dni otwarte.",
+        description: "Luźne rozgrywki i inne atrakcje",
         icon: CalendarDays,
         href: "/oferta/wydarzenia", // <--- ZMIANA
         image: "/offer/events.webp",
@@ -31,7 +31,7 @@ const offerItems = [
     },
     {
         title: "Padel dla Dzieci",
-        description: "Akademia juniora – nauka przez zabawę.",
+        description: "Nauka przez zabawę.",
         icon: Smile,
         href: "/oferta/dla-dzieci", // <--- ZMIANA
         image: "/offer/kids.webp",

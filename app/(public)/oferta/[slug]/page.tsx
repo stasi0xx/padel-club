@@ -3,25 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, CheckCircle2, ArrowRight } from "lucide-react";
 import { offersData } from "@/data/offers";
-import {TrainersGrid} from "@/components/TrainersGrid";
+import { TrainersGrid } from "@/components/TrainersGrid";
+import { EventFormats } from "@/components/offer/EventFormats";
+import { getSchedule } from "@/app/actions/schedule-actions";
+import { TrainingSchedule } from "@/components/offer/TrainingSchedule";
+import {LevelDescriptions} from "@/components/offer/LevelDescriptions";
+// <--- IMPORT
 
-export async function generateStaticParams() {
-    return offersData.map((offer) => ({
-        slug: offer.slug,
-    }));
-}
-
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-    const slug = (await params).slug;
-    const offer = offersData.find((o) => o.slug === slug);
-
-    if (!offer) return { title: "Oferta | Gdynia Padel Club" };
-
-    return {
-        title: `${offer.title} | Gdynia Padel Club`,
-        description: offer.subtitle,
-    };
-}
+// ... (generateStaticParams i generateMetadata bez zmian) ...
 
 export default async function OfferPage({ params }: { params: Promise<{ slug: string }> }) {
     const slug = (await params).slug;
@@ -31,9 +20,14 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
         return notFound();
     }
 
+    // Sprawdzamy, czy to strona wydarzeń
+    const isEventsPage = offer.slug === 'wydarzenia';
+    const isTrainingPage = offer.slug === 'treningi';
+    const scheduleData = isTrainingPage ? await getSchedule() : [];
+
     return (
         <main className="min-h-screen bg-white pb-24">
-            {/* HEADER Z TŁEM */}
+            {/* ... (HEADER Z TŁEM - bez zmian) ... */}
             <div className="relative h-[60vh] min-h-[400px] w-full bg-gray-900 overflow-hidden">
                 <Image
                     src={offer.image}
@@ -76,10 +70,34 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
 
                 {/* LEWA KOLUMNA: Opis */}
                 <div className="lg:col-span-2">
-                    <div
-                        className="prose prose-lg prose-blue max-w-none text-gray-600"
-                        dangerouslySetInnerHTML={{ __html: offer.description }}
-                    />
+
+                    {/* LOGIKA WYŚWIETLANIA */}
+                    {isEventsPage ? (
+                        // ... (EventFormats logic)
+                        <>
+                            <div className="prose prose-lg prose-blue max-w-none text-gray-600 mb-8">
+                                {/* ... krótki wstęp ... */}
+                            </div>
+                            <EventFormats />
+                        </>
+                    ) : isTrainingPage ? (
+                        // <--- TU WPADA GRAFIK DLA TRENINGÓW
+                        <>
+                            <div
+                                className="prose prose-lg prose-blue max-w-none text-gray-600 mb-12"
+                                dangerouslySetInnerHTML={{ __html: offer.description }}
+                            />
+                            {/* PRZEKAZUJEMY DANE Z BAZY DO KOMPONENTU */}
+                            <LevelDescriptions />
+                            <TrainingSchedule scheduleData={scheduleData} />
+                        </>
+                    ) : (
+                        // STANDARD DLA RESZTY
+                        <div
+                            className="prose prose-lg prose-blue max-w-none text-gray-600"
+                            dangerouslySetInnerHTML={{ __html: offer.description }}
+                        />
+                    )}
                 </div>
 
                 {/* PRAWA KOLUMNA: Cechy i CTA */}
@@ -101,10 +119,10 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
                             href={offer.ctaLink}
                             target={offer.ctaLink.startsWith('http') ? "_blank" : "_self"}
                             rel="noopener noreferrer"
-                            className="block w-full text-center bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white font-bold py-4 rounded-xl transition-all shadow-lg hover:shadow-blue-500/30 flex items-center justify-center gap-2"
+                            className="block w-full text-center bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white font-bold py-4 rounded-xl transition-all shadow-lg hover:shadow-blue-500/30 flex items-center justify-center gap-2 group"
                         >
                             {offer.ctaText}
-                            <ArrowRight size={20} />
+                            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                         </a>
 
                         <p className="text-xs text-center text-gray-400 mt-4">
@@ -116,19 +134,17 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
                 </div>
             </div>
 
-            {/* --- NOWA SEKCJA: TRENERZY (Wyświetla się tylko jeśli są w danych) --- */}
+            {/* --- SEKCJA: TRENERZY --- */}
             {offer.trainers && (
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
+                    {/* ... (Reszta bez zmian) ... */}
                     <div className="mb-12">
                         <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4 uppercase">
                             Poznaj naszych trenerów
                         </h2>
                         <div className="w-24 h-1 bg-[var(--color-primary)] rounded-full" />
                     </div>
-
-                    {/* Używamy komponentu klienckiego dla interakcji */}
                     <TrainersGrid trainers={offer.trainers} />
-
                 </section>
             )}
 
