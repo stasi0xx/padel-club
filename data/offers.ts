@@ -79,7 +79,7 @@ export const offersData: OfferDetail[] = [
         subtitle: "Treningi i mini turnieje",
         image: "/offer/kids.webp",
         icon: Smile,
-        description: `<p>Padel to jeden z najbezpieczniejszych sportów...</p>`,
+        description: '',
         features: ["Zajęcia od 5. roku życia", "Sprzęt dla dzieci", "Bezpieczna infrastruktura", "Zabawy ruchowe"],
         ctaLink: "https://kluby.org/gdynia-padel-club/zapisy",
         ctaText: "Zapisz dziecko",

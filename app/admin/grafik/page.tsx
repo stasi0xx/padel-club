@@ -41,6 +41,7 @@ export default async function AdminSchedulePage() {
                                     <option value="B">B</option>
                                     <option value="C">C</option>
                                     <option value="B/C">B/C</option>
+                                    <option value="Junior">Junior (Dzieci)</option>
                                 </select>
                             </div>
                         </div>

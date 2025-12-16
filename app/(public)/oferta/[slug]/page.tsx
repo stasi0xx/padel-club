@@ -8,6 +8,9 @@ import { EventFormats } from "@/components/offer/EventFormats";
 import { getSchedule } from "@/app/actions/schedule-actions";
 import { TrainingSchedule } from "@/components/offer/TrainingSchedule";
 import {LevelDescriptions} from "@/components/offer/LevelDescriptions";
+import { KidsBenefits } from "@/components/offer/kids/KidsBenefits";
+import { PromoVideo } from "@/components/offer/kids/PromoVideo";
+import { KidsSchedule } from "@/components/offer/kids/KidsSchedule";
 // <--- IMPORT
 
 // ... (generateStaticParams i generateMetadata bez zmian) ...
@@ -23,7 +26,8 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
     // Sprawdzamy, czy to strona wydarzeń
     const isEventsPage = offer.slug === 'wydarzenia';
     const isTrainingPage = offer.slug === 'treningi';
-    const scheduleData = isTrainingPage ? await getSchedule() : [];
+    const isKidsPage = offer.slug === 'dla-dzieci';
+    const scheduleData = (isTrainingPage || isKidsPage) ? await getSchedule() : [];
 
     return (
         <main className="min-h-screen bg-white pb-24">
@@ -91,6 +95,20 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
                             <LevelDescriptions />
                             <TrainingSchedule scheduleData={scheduleData} />
                         </>
+                    ) : isKidsPage ? (
+
+                        /* --- SEKCJA DLA DZIECI --- */
+                        <>
+                            <div
+                                className="prose prose-lg prose-blue max-w-none text-gray-600 mb-8"
+                                dangerouslySetInnerHTML={{ __html: offer.description }}
+                            />
+
+                            <PromoVideo />
+                            <KidsBenefits />
+                            <KidsSchedule scheduleData={scheduleData} />
+                        </>
+
                     ) : (
                         // STANDARD DLA RESZTY
                         <div

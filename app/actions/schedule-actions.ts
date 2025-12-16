@@ -10,7 +10,7 @@ const scheduleSchema = z.object({
     time: z.string().regex(/^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/, "Nieprawidłowy format czasu (HH:MM)"),
     group_name: z.string().min(3, "Nazwa grupy za krótka"),
     trainer: z.string().min(2, "Imię trenera wymagane"),
-    level: z.enum(["B", "C", "B/C"]),
+    level: z.enum(["B", "C", "B/C", "Junior"]),
     spots: z.string().default("Sprawdź"),
 });
 
@@ -20,7 +20,7 @@ export type ScheduleItem = {
     time: string;
     group_name: string;
     trainer: string;
-    level: "B" | "C" | "B/C";
+    level: "B" | "C" | "B/C" | "Junior";
     spots: string;
 };
 
@@ -51,7 +51,7 @@ export async function addScheduleItem(formData: FormData) {
         time: formData.get("time") as string,
         group_name: formData.get("group_name") as string,
         trainer: formData.get("trainer") as string,
-        level: formData.get("level") as "B" | "C" | "B/C", // Rzutowanie na konkretny Union Type
+        level: formData.get("level") as "B" | "C" | "B/C" | "Junior", // Rzutowanie na konkretny Union Type
         spots: (formData.get("spots") as string) || "Sprawdź",
     };
 
