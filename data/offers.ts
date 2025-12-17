@@ -90,9 +90,18 @@ export const offersData: OfferDetail[] = [
         subtitle: "Rywalizacja na najwyższym poziomie",
         image: "/offer/league.webp",
         icon: Trophy,
-        description: `<p>Dla graczy szukających regularnej rywalizacji...</p>`,
-        features: ["Podział na dywizje", "Elastyczne terminy meczów", "Ranking online", "Nagrody dla najlepszych"],
-        ctaLink: "https://kluby.org/gdynia-padel-club/liga",
+        description: `
+            <p class="mb-4">Dołącz do największej społeczności padlowej w Gdyni. Nasza liga to regularna gra, emocje i walka o każdy punkt.</p>
+            <p>Oferujemy dwa równoległe formaty: <strong>Liga Open</strong> (dla wszystkich) oraz dedykowana <strong>Liga Kobiet</strong>.</p>
+            <p>Sezon trwa około dwóch miesięcy. W tym czasie rozgrywasz mecze w grupie o zbliżonym poziomie. Na koniec sezonu najlepsi awansują, a walczący o utrzymanie... mają szansę w kolejnej edycji.</p>
+        `,
+        features: [
+            "Liga Open i Liga Kobiet",
+            "Sezon trwa 2 miesiące",
+            "Ranking Online",
+            "System awansów i spadków"
+        ],
+        ctaLink: "https://kluby.org/gdynia-padel-club/rozgrywki",
         ctaText: "Dołącz do ligi",
     },
 
@@ -100,15 +109,21 @@ export const offersData: OfferDetail[] = [
     {
         slug: "treningi-indywidualne",
         title: "Treningi Indywidualne",
-        subtitle: "Szybki progres 1 na 1",
-        image: "/offer/individual.webp",
-        icon: User,
+        subtitle: "Twój najszybszy progres",
+        image: "/offer/individual.webp", // Upewnij się, że masz to zdjęcie
+        icon: User, // import { User } from "lucide-react"
         description: `
-      <p>Najszybsza droga do poprawy Twojej gry. Podczas treningu indywidualnego trener poświęca 100% uwagi Twojej technice. To idealne rozwiązanie, jeśli chcesz wyeliminować konkretne błędy lub nauczyć się zaawansowanych uderzeń.</p>
-      <p>Nasi trenerzy to doświadczeni zawodnicy i certyfikowani instruktorzy, którzy dostosują plan treningowy do Twoich potrzeb.</p>
-    `,
-        features: ["Pełna uwaga trenera", "Analiza wideo", "Dopasowany plan", "Elastyczne godziny"],
-        ctaLink: "https://kluby.org/gdynia-padel-club/trenerzy",
+            <p>Najskuteczniejsza forma nauki. Podczas treningu indywidualnego cała uwaga trenera skupiona jest wyłącznie na Tobie.</p>
+            <p>Niezależnie od tego, czy chcesz poprawić technikę bandejy, nauczyć się gry o szyby, czy po prostu zacząć przygodę z padlem w komfortowych warunkach – to opcja dla Ciebie.</p>
+        `,
+        features: [
+            "Dopasowane godziny",
+            "Indywidualny plan rozwoju",
+            "Sprzęt w cenie",
+            // "Analiza wideo" <- USUNIĘTE ZGODNIE Z PROŚBĄ
+            "Dostęp do piłek premium"
+        ],
+        ctaLink: "https://kluby.org/gdynia-padel-club/treningi",
         ctaText: "Umów trening",
         trainers: [
             {
@@ -175,14 +190,22 @@ export const offersData: OfferDetail[] = [
 
     {
         slug: "turnieje",
-        title: "Turnieje",
-        subtitle: "Weekendowe emocje",
+        title: "Turnieje Padel Club",
+        subtitle: "Sportowa rywalizacja o punkty", // Bardziej profesjonalny podtytuł
         image: "/offer/tournament.webp",
         icon: Medal,
-        description: `<p>Cyklicznie organizujemy turnieje w formatach Mexicano...</p>`,
-        features: ["Formaty Mexicano / Americano", "Kategorie Open / Damska / Mixt", "Puchary i nagrody", "Poczęstunek"],
-        ctaLink: "https://kluby.org/gdynia-padel-club/turnieje",
-        ctaText: "Zapisz się",
+        description: `
+            <p>Prawdziwy sprawdzian Twoich umiejętności. Organizujemy cykliczne turnieje (raz w miesiącu), które przyciągają graczy z całego Trójmiasta.</p>
+            <p>Niezależnie od tego, czy jesteś wyjadaczem z kategorii A, czy dopiero zaczynasz w C – znajdziesz tu miejsce dla siebie. Gra toczy się o puchary, nagrody rzeczowe i cenne punkty do rankingu klubowego.</p>
+        `,
+        features: [
+            "Kategorie Open A/B/C",
+            "Punkty Rankingowe",
+            "Profesjonalna organizacja",
+            "Minimum 3 mecze gwarantowane"
+        ],
+        ctaLink: "https://kluby.org/gdynia-padel-club/turnieje", // Link do "Upcoming"
+        ctaText: "Kalendarz Turniejów",
     },
     {
         slug: "sklep",
@@ -194,5 +217,53 @@ export const offersData: OfferDetail[] = [
         features: ["Rakiety testowe", "Odzież i obuwie", "Piłki i akcesoria", "Fachowe doradztwo"],
         ctaLink: "/kontakt",
         ctaText: "Zapytaj o dostępność",
+    },
+    {
+        slug: "biznes",
+        title: "Eventy i Integracje",
+        subtitle: "Firmy, Urodziny, Okazje Specjalne",
+        image: "/offer/events.webp",
+        icon: Users, // Pamiętaj o imporcie Users
+        description: `
+            <div class="space-y-8">
+                <p class="text-xl text-gray-600 leading-relaxed font-light">
+                    Szukasz miejsca na integrację inną niż wszystkie? <strong class="text-gray-900 font-bold">Gdynia Padel Club</strong> to przestrzeń, gdzie sport łączy się z relaksem. Zorganizuj u nas event, o którym Twój zespół będzie rozmawiał tygodniami.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-3xl border border-gray-100">
+                        <h4 class="text-lg font-heading font-bold text-gray-900 mb-3 flex items-center gap-2">
+                            <span class="text-2xl">🎉</span> Imprezy Szyte na Miarę
+                        </h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Niezależnie od okazji – integracja działu, urodziny czy wieczór kawalerski. Zapewniamy kompleksową obsługę: od <strong>nauki gry z trenerami</strong>, przez turniej z sędzią, aż po strefę chillout.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-3xl border border-gray-100">
+                        <h4 class="text-lg font-heading font-bold text-gray-900 mb-3 flex items-center gap-2">
+                            <span class="text-2xl">🍕</span> Catering Partnerski
+                        </h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Współpracujemy z trójmiejskimi klasykami. <strong>Pasta Miasta</strong> i <strong>Czerwony Piec</strong> dostarczą pizzę i pasty. W sezonie letnim odpalamy klimatyczną strefę <strong>Grill</strong>.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 p-6 rounded-3xl border border-blue-100 text-center">
+                    <p class="font-medium text-blue-800 mb-0">
+                        Masz własny pomysł? Jesteśmy elastyczni. Skontaktuj się z nami, a przygotujemy scenariusz idealny dla Twojej grupy.
+                    </p>
+                </div>
+            </div>
+        `,
+        features: [
+            "Organizacja turnieju",
+            "Catering Partnerski",
+            "Strefa Grill (Lato)",
+            "Obsługa Trenerów"
+        ],
+        ctaLink: "mailto:kontakt@gdyniapadel.pl",
+        ctaText: "Zapytaj o ofertę",
     },
 ];

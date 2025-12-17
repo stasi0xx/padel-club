@@ -15,8 +15,7 @@ export function Hero() {
                     autoPlay
                     loop
                     muted
-                    playsInline // KLUCZOWE dla iOS - bez tego wideo odpali się na pełnym ekranie
-                    poster="/hero-poster.jpg" // Plik .jpg (klatka z filmu), który wyświetla się ZANIM wideo się załaduje. Zrób screenshota z filmu.
+                    playsInline // KLUCZOWE dla iOS - bez tego wideo odpali się na pełnym ekranie// Plik .jpg (klatka z filmu), który wyświetla się ZANIM wideo się załaduje. Zrób screenshota z filmu.
                     className="w-full h-full object-cover"
                 >
                     {/* Kolejność ma znaczenie: przeglądarka weźmie pierwszy format, który obsługuje */}

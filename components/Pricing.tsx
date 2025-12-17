@@ -70,7 +70,7 @@ const pricingPlans: PricingPlan[] = [
         ],
     },
     {
-        category: "Turnieje",
+        category: "Americano / Mexicano",
         icon: Trophy,
         description: "Rywalizacja Americano / Mexicano.",
         items: [

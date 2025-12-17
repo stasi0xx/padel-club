@@ -11,6 +11,13 @@ import {LevelDescriptions} from "@/components/offer/LevelDescriptions";
 import { KidsBenefits } from "@/components/offer/kids/KidsBenefits";
 import { PromoVideo } from "@/components/offer/kids/PromoVideo";
 import { KidsSchedule } from "@/components/offer/kids/KidsSchedule";
+import {LeagueInfo} from "@/components/offer/league/LeagueInfo";
+import {LeagueFormats} from "@/components/offer/league/LeagueFormats";
+import {IndividualTraining} from "@/components/offer/IndividualTraining";
+import {NextTournament} from "@/components/offer/tournaments/NextTournament";
+import {TournamentRules} from "@/components/offer/tournaments/TournamentRules";
+import { getTournament } from "@/app/actions/tournament-actions";
+import { EventOrganization } from "@/components/offer/EventOrganization";
 // <--- IMPORT
 
 // ... (generateStaticParams i generateMetadata bez zmian) ...
@@ -27,7 +34,12 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
     const isEventsPage = offer.slug === 'wydarzenia';
     const isTrainingPage = offer.slug === 'treningi';
     const isKidsPage = offer.slug === 'dla-dzieci';
+    const isLeaguePage = offer.slug === 'liga';
+    const isIndividualPage = offer.slug === 'treningi-indywidualne';
+    const isTournamentPage = offer.slug === 'turnieje';
+    const isBusinessPage = offer.slug === 'biznes';
     const scheduleData = (isTrainingPage || isKidsPage) ? await getSchedule() : [];
+    const tournamentData = isTournamentPage ? await getTournament() : null;
 
     return (
         <main className="min-h-screen bg-white pb-24">
@@ -109,7 +121,59 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
                             <KidsSchedule scheduleData={scheduleData} />
                         </>
 
-                    ) : (
+                    ) : isLeaguePage ? (
+
+                        /* --- SEKCJA LIGI --- */
+                        <>
+                            <div
+                                className="prose prose-lg prose-blue max-w-none text-gray-600 mb-8"
+                            />
+
+                            <LeagueInfo />
+                            <LeagueFormats />
+                        </>
+
+                    ) : isIndividualPage ? (
+
+                        /* --- TRENING INDYWIDUALNY --- */
+                        <>
+                            <div
+                                className="prose prose-lg prose-blue max-w-none text-gray-600 mb-8"
+                            />
+
+                            {/* Wstrzyknięcie nowego komponentu */}
+                            <IndividualTraining />
+
+                        </>
+
+                    ) : isTournamentPage ? (
+
+                        /* --- SEKCJA TURNIEJE --- */
+                        <>
+                            <div
+                                className="prose prose-lg prose-blue max-w-none text-gray-600 mb-8"
+                            />
+
+                            {/* 1. Najbliższy Turniej (Baner) */}
+                            <NextTournament data={tournamentData}/>
+
+                            {/* 2. Zasady i Kategorie */}
+                            <TournamentRules />
+                        </>
+
+                    ) : isBusinessPage ? (
+
+                        /* --- SEKCJA BIZNES / EVENTY --- */
+                        <>
+                            <div
+                                className="prose prose-lg prose-blue max-w-none text-gray-600 mb-12"
+                                dangerouslySetInnerHTML={{ __html: offer.description }}
+                            />
+
+                            <EventOrganization />
+                        </>
+
+                    ): (
                         // STANDARD DLA RESZTY
                         <div
                             className="prose prose-lg prose-blue max-w-none text-gray-600"

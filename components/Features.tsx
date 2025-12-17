@@ -16,12 +16,12 @@ const features = [
     },
     {
         title: "Wypożyczalnia Sprzętu",
-        description: "Dopiero zaczynasz? Nie musisz inwestować w własną rakietę. Na miejscu wypożyczysz profesjonalny sprzęt HEAD.",
+        description: "Dopiero zaczynasz? Nie musisz inwestować w własną rakietę. Na miejscu wypożyczysz profesjonalny sprzęt BABOLAT, HEAD, SIUX i wiele innych.",
         icon: Dumbbell,
     },
     {
         title: "Szatnie i Prysznice",
-        description: "Pełen komfort przed i po treningu. Do Twojej dyspozycji są nowoczesne szatnie z prysznicami.",
+        description: "Pełen komfort przed i po treningu. Do Twojej dyspozycji są szatnie z prysznicami.",
         icon: ShowerHead,
     }
 ];

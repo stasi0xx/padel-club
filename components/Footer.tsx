@@ -40,7 +40,7 @@ export function Footer() {
                             </div>
                         </Link>
                         <p className="text-sm leading-relaxed max-w-xs text-gray-500">
-                            Najnowocześniejszy klub padlowy w Trójmieście. Profesjonalne korty, szkolenia i niesamowita atmosfera. Dołącz do gry!
+                            Pierwszy klub padlowy w Gdyni. Profesjonalne korty, szkolenia i niesamowita atmosfera. Dołącz do gry!
                         </p>
 
                         {/* Social Media */}

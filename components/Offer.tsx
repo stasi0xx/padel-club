@@ -9,7 +9,8 @@ import {
     Trophy,
     User,
     Medal,
-    ShoppingBag
+    ShoppingBag,
+    Briefcase
 } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 
@@ -21,6 +22,13 @@ const offerItems = [
         icon: CalendarDays,
         href: "/oferta/wydarzenia", // <--- ZMIANA
         image: "/offer/events.webp",
+    },
+    {
+        title: "Eventy i Integracje",
+        description: "Firmy, urodziny, catering i grill.",
+        icon: Briefcase,
+        href: "/oferta/biznes", // Linkuje do slug: "biznes"
+        image: "/offer/biznes.webp", // Możesz tu dać inne zdjęcie, np. ludzie jedzący pizzę
     },
     {
         title: "Grupy Treningowe",
