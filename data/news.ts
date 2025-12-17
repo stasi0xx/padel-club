@@ -7,6 +7,7 @@ export interface NewsItem {
     title: string;
     excerpt: string;
     permalink: string;
+    slug?: string;
     // Link do Instagrama lub wewnętrzny
 }
 
