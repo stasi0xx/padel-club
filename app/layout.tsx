@@ -15,8 +15,34 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-    title: "Gdynia Padel Club",
-    description: "Zagraj w padla w Gdyni. Rezerwacja kortów, treningi, turnieje.",
+    metadataBase: new URL("https://gdyniapadelclub.pl"), // <--- TU WPISZ SWOJĄ DOMENĘ
+    title: {
+        default: "Gdynia Padel Club - Najlepsze korty w Trójmieście",
+        template: "%s | Gdynia Padel Club", // Np. "Liga | Gdynia Padel Club"
+    },
+    description: "Nowoczesny klub padlowy w Gdyni. Treningi, liga, turnieje i eventy firmowe. Dołącz do naszej społeczności i zagraj w padla!",
+    openGraph: {
+        title: "Gdynia Padel Club",
+        description: "Dołącz do gry w najlepszym klubie w Gdyni. Rezerwuj korty, trenuj i wygrywaj!",
+        url: "https://gdyniapadelclub.pl",
+        siteName: "Gdynia Padel Club",
+        images: [
+            {
+                url: "/logo.svg", // Domyślne zdjęcie z folderu public
+                width: 1200,
+                height: 630,
+                alt: "Gdynia Padel Club Korty",
+            },
+        ],
+        locale: "pl_PL",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Gdynia Padel Club",
+        description: "Dołącz do gry w najlepszym klubie w Gdyni.",
+        images: ["/logo.svg"],
+    },
 };
 
 export default function RootLayout({

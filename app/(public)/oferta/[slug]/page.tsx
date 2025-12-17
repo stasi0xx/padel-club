@@ -18,9 +18,48 @@ import {NextTournament} from "@/components/offer/tournaments/NextTournament";
 import {TournamentRules} from "@/components/offer/tournaments/TournamentRules";
 import { getTournament } from "@/app/actions/tournament-actions";
 import { EventOrganization } from "@/components/offer/EventOrganization";
+import { Metadata } from "next";
 // <--- IMPORT
 
 // ... (generateStaticParams i generateMetadata bez zmian) ...
+
+function stripHtml(html: string) {
+    return html.replace(/<[^>]*>?/gm, '');
+}
+
+interface PageProps {
+    params: Promise<{ slug: string }>; // Next.js 15 oczekuje Promise w params
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const { slug } = await params;
+    const offer = offersData.find((item) => item.slug === slug);
+
+    if (!offer) {
+        return {
+            title: "Oferta nie znaleziona",
+        };
+    }
+
+    const cleanDescription = stripHtml(offer.description).slice(0, 160) + "...";
+
+    return {
+        title: offer.title,
+        description: `${offer.subtitle} - ${cleanDescription}`,
+        openGraph: {
+            title: `${offer.title} | Gdynia Padel Club`,
+            description: offer.subtitle,
+            images: [
+                {
+                    url: offer.image, // Zdjęcie konkretnej oferty
+                    width: 1200,
+                    height: 630,
+                    alt: offer.title,
+                },
+            ],
+        },
+    };
+}
 
 export default async function OfferPage({ params }: { params: Promise<{ slug: string }> }) {
     const slug = (await params).slug;

@@ -6,7 +6,8 @@ export interface NewsItem {
     date: string;
     title: string;
     excerpt: string;
-    permalink: string; // Link do Instagrama lub wewnętrzny
+    permalink: string;
+    // Link do Instagrama lub wewnętrzny
 }
 
 export const newsData: NewsItem[] = [

@@ -1,10 +1,44 @@
+import { newsData } from "@/data/news";
 import { createClient } from "@/lib/supabase/server";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Calendar } from "lucide-react";
+import { Metadata } from "next"
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+
+interface PageProps {
+    params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const { slug } = await params;
+    const post = newsData.find((item) => item.slug === slug);
+
+    if (!post) {
+        return { title: "Artykuł nie znaleziony" };
+    }
+
+    return {
+        title: post.title,
+        description: post.excerpt, // Używamy zajawki jako opisu SEO
+        openGraph: {
+            title: post.title,
+            description: post.excerpt,
+            type: "article",
+            publishedTime: post.date,
+            images: [
+                {
+                    url: post.image, // Zdjęcie artykułu
+                    width: 1200,
+                    height: 630,
+                    alt: post.title,
+                },
+            ],
+        },
+    };
+}
 
 // W Next.js 16 params jest Promise!
 export default async function NewsPostPage({ params }: { params: Promise<{ slug: string }> }) {
