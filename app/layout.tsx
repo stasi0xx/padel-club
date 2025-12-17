@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Inter } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 const montserrat = Montserrat({
     variable: "--font-montserrat",
@@ -55,6 +56,22 @@ export default function RootLayout({
         <body
             className={`${montserrat.variable} ${inter.variable} antialiased bg-white text-black`}
         >
+        {/* --- 2. KOD GOOGLE TAG START --- */}
+        <Script
+            src="https://www.googletagmanager.com/gtag/js?id=GTM-NTHHN5MG"
+            strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+            {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'GTM-NTHHN5MG');
+          `}
+        </Script>
+        {/* --- KOD GOOGLE TAG KONIEC --- */}
+
         {/* Tutaj renderujemy tylko dzieci. Navbar i Footer znikają stąd. */}
         {children}
         </body>
