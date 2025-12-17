@@ -86,23 +86,50 @@ export const offersData: OfferDetail[] = [
     },
     {
         slug: "liga",
-        title: "Liga Klubowa",
-        subtitle: "Rywalizacja na najwyższym poziomie",
+        title: "Gdyńska Liga Padla", // Zmienione z "Liga Klubowa" na oficjalną nazwę
+        subtitle: "Ponad 3 lata tradycji",
         image: "/offer/league.webp",
         icon: Trophy,
         description: `
-            <p class="mb-4">Dołącz do największej społeczności padlowej w Gdyni. Nasza liga to regularna gra, emocje i walka o każdy punkt.</p>
-            <p>Oferujemy dwa równoległe formaty: <strong>Liga Open</strong> (dla wszystkich) oraz dedykowana <strong>Liga Kobiet</strong>.</p>
-            <p>Sezon trwa około dwóch miesięcy. W tym czasie rozgrywasz mecze w grupie o zbliżonym poziomie. Na koniec sezonu najlepsi awansują, a walczący o utrzymanie... mają szansę w kolejnej edycji.</p>
+            <div class="space-y-6">
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Dołącz do rozgrywek, które trwają nieprzerwanie od ponad trzech lat. <strong>Gdyńska Liga Padla</strong> to społeczność pasjonatów, gdzie każdy znajdzie rywala na swoim poziomie – od debiutantów po ligę PRO.
+                </p>
+
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="bg-gray-50 p-5 rounded-2xl border border-gray-100">
+                        <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">📅 Elastyczne Zasady</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li>• <strong>System:</strong> Każdy z każdym w grupie.</li>
+                            <li>• <strong>Czas:</strong> Ok. 1.5 - 2 miesiące na rozegranie kolejki.</li>
+                            <li>• <strong>Terminy:</strong> Pełna swoboda – sami umawiacie się na mecz.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-blue-50 p-5 rounded-2xl border border-blue-100">
+                        <h4 class="font-bold text-blue-900 mb-2 flex items-center gap-2">📊 Unikalna Punktacja</h4>
+                        <p class="text-sm text-blue-800 mb-3">
+                            Gramy zawsze <strong>3 sety</strong>. Każdy set ma znaczenie! Para wygrywająca 3:0 zgarnia aż 25 pkt, ale nawet przy porażce 0:3 otrzymujecie 5 pkt za walkę.
+                        </p>
+                        <div class="text-xs font-bold text-blue-600 bg-white/50 p-2 rounded-lg inline-block border border-blue-200">
+                            + Punkty do oficjalnego rankingu PFP 🇵🇱
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-sm text-gray-500 italic">
+                    Po każdej edycji najlepsi awansują wyżej, a słabsi spadają. To gwarantuje wyrównany poziom w kolejnym sezonie.
+                </p>
+            </div>
         `,
         features: [
-            "Liga Open i Liga Kobiet",
-            "Sezon trwa 2 miesiące",
-            "Ranking Online",
-            "System awansów i spadków"
+            "Punkty do rankingu PFP",
+            "Mecze 3-setowe",
+            "System Awansów i Spadków",
+            "Elastyczny Grafik"
         ],
         ctaLink: "https://kluby.org/gdynia-padel-club/rozgrywki",
-        ctaText: "Dołącz do ligi",
+        ctaText: "Dołącz do rozgrywek",
     },
 
     // --- ZMIANA TUTAJ: TRENINGI INDYWIDUALNE Z TRENERAMI ---
@@ -190,21 +217,50 @@ export const offersData: OfferDetail[] = [
 
     {
         slug: "turnieje",
-        title: "Turnieje Padel Club",
-        subtitle: "Sportowa rywalizacja o punkty", // Bardziej profesjonalny podtytuł
+        title: "Turnieje Weekendowe",
+        subtitle: "Sportowe emocje w jeden dzień",
         image: "/offer/tournament.webp",
         icon: Medal,
         description: `
-            <p>Prawdziwy sprawdzian Twoich umiejętności. Organizujemy cykliczne turnieje (raz w miesiącu), które przyciągają graczy z całego Trójmiasta.</p>
-            <p>Niezależnie od tego, czy jesteś wyjadaczem z kategorii A, czy dopiero zaczynasz w C – znajdziesz tu miejsce dla siebie. Gra toczy się o puchary, nagrody rzeczowe i cenne punkty do rankingu klubowego.</p>
+            <div class="space-y-8">
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Szukasz intensywnej dawki rywalizacji? Nasze <strong>Turnieje Weekendowe</strong> to cykliczne wydarzenia (raz w miesiącu lub co dwa), które stanowią doskonałe uzupełnienie ligi. To święto padla dla zawodników i kibiców.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-gray-50 p-5 rounded-2xl border border-gray-100">
+                        <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">⏱ Dynamiczny Format</h4>
+                        <p class="text-sm text-gray-600">
+                            Cała rywalizacja odbywa się <strong>jednego dnia</strong> – od fazy grupowej aż po finały. Warto zarezerwować sobie co najmniej pół dnia na grę i kibicowanie.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 p-5 rounded-2xl border border-gray-100">
+                        <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">🍰 Atmosfera i Nagrody</h4>
+                        <p class="text-sm text-gray-600">
+                            Na zwycięzców czekają nagrody, a dla wszystkich uczestników zapewniamy <strong>poczęstunek</strong>. To idealna okazja do integracji i poznania nowych partnerów do gry.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-blue-50 p-5 rounded-2xl border border-blue-100">
+                    <h4 class="font-bold text-blue-900 mb-2 flex items-center gap-2">🏅 Kategorie i Ranking</h4>
+                    <p class="text-sm text-blue-800 mb-3">
+                        Wybierz poziom dla siebie: <strong>A, B, C, Kobiety, Mikst lub 45+</strong>. Niezależnie od doświadczenia, znajdziesz tu równorzędnych rywali.
+                    </p>
+                    <div class="text-xs font-bold text-blue-600 bg-white/50 p-2 rounded-lg inline-block border border-blue-200">
+                        + Punkty do rankingu PFP (zależnie od rangi) 🇵🇱
+                    </div>
+                </div>
+            </div>
         `,
         features: [
-            "Kategorie Open A/B/C",
-            "Punkty Rankingowe",
-            "Profesjonalna organizacja",
-            "Minimum 3 mecze gwarantowane"
+            "Kategorie A/B/C/Kobiety/Mix/45+",
+            "Format Jednodniowy",
+            "Poczęstunek i Nagrody",
+            "Punkty PFP (wybrane edycje)"
         ],
-        ctaLink: "https://kluby.org/gdynia-padel-club/turnieje", // Link do "Upcoming"
+        ctaLink: "https://kluby.org/gdynia-padel-club/turnieje",
         ctaText: "Kalendarz Turniejów",
     },
     {

@@ -8,10 +8,15 @@ const leagues = [
         id: "open",
         title: "Liga Open",
         subtitle: "Dla Wszystkich",
-        description: "Największe rozgrywki w mieście. Tutaj płeć nie ma znaczenia – liczą się tylko umiejętności. Walczysz w dywizjach dopasowanych do Twojego poziomu, od debiutantów po ligę PRO.",
+        // Zaktualizowałem opis na bazie Twojego tekstu, skracając go lekko do kafelka
+        description: "Największe rozgrywki w mieście, trwające nieprzerwanie od 3 lat. Walczysz w dywizjach dopasowanych do Twojego poziomu, z szansą na awans po każdej edycji.",
         icon: Swords,
-        color: "bg-blue-900 text-white", // Poważny, "męski" kolor (choć open)
-        features: ["5-6 meczów w rundzie", "Awansy i spadki", "Ranking ELO"],
+        color: "bg-blue-900 text-white",
+        features: [
+            "System każdy z każdym", // Zmiana z "5-6 meczów" na bardziej uniwersalne
+            "Awanse i spadki co edycję",
+            "Punkty do rankingu PFP" // <--- KLUCZOWA ZMIANA
+        ],
     },
     {
         id: "women",
@@ -19,8 +24,12 @@ const leagues = [
         subtitle: "Tylko dla Pań",
         description: "Dynamicznie rozwijająca się społeczność. Rywalizacja w atmosferze fair play, ale bez taryfy ulgowej. Idealne miejsce, by sprawdzić się na tle innych zawodniczek.",
         icon: Crown,
-        color: "bg-pink-600 text-white", // Wyróżniający się, energiczny
-        features: ["Dedykowane dywizje", "Integracja", "Wspólne finały"],
+        color: "bg-pink-600 text-white",
+        features: [
+            "Dedykowane dywizje",
+            "Ranking PFP", // <--- TEŻ DODAJEMY
+            "Wspólne finały"
+        ],
     }
 ];
 
@@ -34,7 +43,7 @@ export function LeagueFormats() {
                         initial={{ opacity: 0, x: idx === 0 ? -20 : 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="group relative overflow-hidden rounded-3xl shadow-xl border border-gray-100 bg-white flex flex-col"
+                        className="group relative overflow-hidden rounded-3xl shadow-xl border border-gray-100 bg-white flex flex-col hover:shadow-2xl transition-shadow duration-300"
                     >
                         {/* Header z kolorem */}
                         <div className={`${league.color} p-8 relative overflow-hidden`}>
@@ -45,7 +54,7 @@ export function LeagueFormats() {
                                     </h3>
                                     <p className="font-medium opacity-90">{league.subtitle}</p>
                                 </div>
-                                <league.icon size={48} className="opacity-80" />
+                                <league.icon size={48} className="opacity-80 group-hover:rotate-12 transition-transform duration-500" />
                             </div>
 
                             {/* Dekoracja tła */}
@@ -56,7 +65,7 @@ export function LeagueFormats() {
                         <div className="p-8 flex-grow flex flex-col">
                             <div className="flex items-center gap-3 mb-6 text-gray-500 font-medium bg-gray-50 w-fit px-4 py-2 rounded-full border border-gray-100">
                                 <CalendarRange size={18} className="text-[var(--color-primary)]" />
-                                <span>Czas trwania: ok. 2 miesiące</span>
+                                <span>Czas trwania: 1.5 - 2 miesiące</span>
                             </div>
 
                             <p className="text-gray-600 mb-8 leading-relaxed text-lg">

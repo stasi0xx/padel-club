@@ -1,49 +1,56 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Trophy, Medal, Crown, Users, Clock, BarChart3, Star, Sparkles } from "lucide-react";
+import { Trophy, Medal, Crown, Users, Clock, BarChart3, Star, Sparkles, HeartHandshake } from "lucide-react";
 
-// Grupa 1: Drabinka Open (A, B, C)
+// Grupa 1: Poziomy Zaawansowania (A, B, C)
 const openLevels = [
     {
         id: "A",
-        name: "Open A (Zaawansowana)",
-        desc: "Elita klubowa. Gracze turniejowi z wieloletnim stażem, trenerzy i byli zawodnicy tenisa.",
+        name: "Poziom A (Zaawansowany)",
+        desc: "Dla graczy turniejowych i trenerów. Najwyższy poziom rywalizacji.",
         icon: Trophy,
         color: "bg-yellow-100 text-yellow-700 border-yellow-200",
-        badge: "Najwyższy poziom"
+        badge: "PRO"
     },
     {
         id: "B",
-        name: "Open B (Średniozaawansowana)",
-        desc: "Solidni amatorzy. Regularna gra, opanowane bandejas i woleje, dobra taktyka.",
+        name: "Poziom B (Średniozaawansowany)",
+        desc: "Solidna gra taktyczna i techniczna. Dla osób grających regularnie.",
         icon: Star,
         color: "bg-gray-100 text-gray-700 border-gray-200",
-        badge: "Najpopularniejsza"
+        badge: "Standard"
     },
     {
         id: "C",
-        name: "Open C (Początkująca+)",
-        desc: "Idealna na start. Dla osób, które znają zasady i grają od kilku miesięcy. Nauka rywalizacji.",
+        name: "Poziom C (Początkujący+)",
+        desc: "Pierwsze kroki w turniejach. Idealne na start przygody z rywalizacją.",
         icon: Medal,
         color: "bg-orange-100 text-orange-700 border-orange-200",
-        badge: "Wstęp do rankingu"
+        badge: "Start"
     }
 ];
 
-// Grupa 2: Kategorie Specjalne
+// Grupa 2: Kategorie Specjalne (Kobiety, 45+, Mikst)
 const specialCategories = [
     {
         id: "Women",
         name: "Kobiety",
-        desc: "Dedykowane turnieje dla Pań. Sportowa rywalizacja w świetnej atmosferze, bez udziału mężczyzn.",
+        desc: "Dedykowana kategoria dla Pań.",
         icon: Crown,
         color: "bg-pink-50 text-pink-600 border-pink-200"
     },
     {
         id: "Mix",
-        name: "Mix & 45+",
-        desc: "Turnieje par mieszanych (Kobieta + Mężczyzna) oraz kategoria dla graczy 45+. Technika ponad siłę.",
+        name: "Mikst (Mixed)",
+        desc: "Pary mieszane (Kobieta + Mężczyzna).",
+        icon: HeartHandshake, // Ikona uścisku dłoni/serca pasuje do miksta
+        color: "bg-purple-50 text-purple-600 border-purple-200"
+    },
+    {
+        id: "45+",
+        name: "Kategoria 45+",
+        desc: "Dla doświadczonych graczy powyżej 45 roku życia.",
         icon: Users,
         color: "bg-blue-50 text-blue-600 border-blue-200"
     }
@@ -60,9 +67,9 @@ export function TournamentRules() {
                         <Clock size={28} />
                     </div>
                     <div>
-                        <h4 className="font-heading font-bold text-gray-900 text-xl mb-2">Czas Gry</h4>
+                        <h4 className="font-heading font-bold text-gray-900 text-xl mb-2">Jeden Dzień</h4>
                         <p className="text-gray-600 leading-relaxed">
-                            Gramy cały dzień (sobota lub niedziela). System gwarantuje Ci <strong>minimum 3 mecze</strong> w grupie, zanim przejdziemy do fazy pucharowej.
+                            Turnieje mają charakter <strong>jednodniowy</strong>. Zarezerwuj sobie pół dnia – gramy od fazy grupowej aż do finałów w jeden weekend.
                         </p>
                     </div>
                 </div>
@@ -72,22 +79,22 @@ export function TournamentRules() {
                         <BarChart3 size={28} />
                     </div>
                     <div>
-                        <h4 className="font-heading font-bold text-gray-900 text-xl mb-2">Ranking Padel Club</h4>
+                        <h4 className="font-heading font-bold text-gray-900 text-xl mb-2">Punkty PFP</h4>
                         <p className="text-gray-600 leading-relaxed">
-                            Za każdy turniej zdobywasz punkty. Awansuj z poziomu C do A, zbierając doświadczenie i trofea.
+                            Walczysz nie tylko o puchary. W wybranych turniejach zbierasz punkty do oficjalnego rankingu <strong>Polskiej Federacji Padla</strong>.
                         </p>
                     </div>
                 </div>
             </div>
 
-            {/* CZĘŚĆ 2: KATEGORIE - PODZIAŁ NA SEKCJE */}
+            {/* CZĘŚĆ 2: KATEGORIE */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
-                {/* LEWA STRONA: DRABINKA OPEN (Większa uwaga) */}
+                {/* LEWA STRONA: POZIOMY A/B/C */}
                 <div className="lg:col-span-7 space-y-6">
                     <h3 className="text-xl font-heading font-bold text-gray-900 flex items-center gap-2 mb-6">
                         <Trophy className="text-[var(--color-primary)]" size={24} />
-                        Poziomy Open
+                        Poziomy Zaawansowania
                     </h3>
 
                     <div className="space-y-4">
@@ -98,14 +105,11 @@ export function TournamentRules() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
-                                className={`group relative p-6 rounded-2xl border ${cat.color.replace('text-', 'border-').split(' ')[2]} bg-white hover:shadow-md transition-all flex flex-col sm:flex-row gap-4 items-start sm:items-center`}
+                                className={`group relative p-5 rounded-2xl border ${cat.color.replace('text-', 'border-').split(' ')[2]} bg-white hover:shadow-md transition-all flex flex-col sm:flex-row gap-4 items-start sm:items-center`}
                             >
-                                {/* Ikona */}
-                                <div className={`p-4 rounded-xl ${cat.color} shrink-0`}>
+                                <div className={`p-3 rounded-xl ${cat.color} shrink-0`}>
                                     <cat.icon size={24} />
                                 </div>
-
-                                {/* Treść */}
                                 <div className="flex-grow">
                                     <div className="flex flex-wrap items-center gap-2 mb-1">
                                         <h4 className="font-bold text-gray-900 text-lg">{cat.name}</h4>
@@ -113,7 +117,7 @@ export function TournamentRules() {
                                             {cat.badge}
                                         </span>
                                     </div>
-                                    <p className="text-sm text-gray-600 leading-relaxed">
+                                    <p className="text-sm text-gray-600">
                                         {cat.desc}
                                     </p>
                                 </div>
@@ -122,11 +126,11 @@ export function TournamentRules() {
                     </div>
                 </div>
 
-                {/* PRAWA STRONA: KATEGORIE SPECJALNE */}
+                {/* PRAWA STRONA: SPECJALNE */}
                 <div className="lg:col-span-5 space-y-6">
                     <h3 className="text-xl font-heading font-bold text-gray-900 flex items-center gap-2 mb-6">
                         <Sparkles className="text-purple-500" size={24} />
-                        Kategorie Specjalne
+                        Pozostałe Kategorie
                     </h3>
 
                     <div className="space-y-4">
@@ -137,9 +141,9 @@ export function TournamentRules() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 + 0.3 }}
-                                className={`p-6 rounded-2xl border ${cat.color} bg-white/50 hover:bg-white transition-colors`}
+                                className={`p-5 rounded-2xl border ${cat.color} bg-white/50 hover:bg-white transition-colors`}
                             >
-                                <div className="flex items-center gap-3 mb-3">
+                                <div className="flex items-center gap-3 mb-2">
                                     <cat.icon size={20} className={cat.color.split(' ')[1]} />
                                     <h4 className="font-bold text-gray-900">{cat.name}</h4>
                                 </div>
