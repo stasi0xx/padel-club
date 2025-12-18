@@ -28,7 +28,7 @@ const leagues = [
         features: [
             "Dedykowane dywizje",
             "Ranking PFP", // <--- TEŻ DODAJEMY
-            "Wspólne finały"
+            "Nagrody dla najlepszych"
         ],
     }
 ];

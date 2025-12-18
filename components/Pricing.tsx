@@ -9,8 +9,10 @@ import {
     Trophy,
     Zap,
     CheckCircle2,
+    Info,
     LucideIcon // Importujemy typ dla ikon
 } from "lucide-react";
+import Image from "next/image";
 
 // 1. Definiujemy typ dla pojedynczej pozycji cennika
 interface PricingItem {
@@ -103,6 +105,13 @@ const itemVariants = {
         transition: { duration: 0.5 }
     },
 };
+
+const cards = [
+    { name: "Multisport", src: "multisport.png" },
+    { name: "FitProfit", src: "fitprofit.png" },
+    { name: "PZU Sport", src: "pzu-sport.png" },
+    { name: "Medicover", src: "medicover.png" },
+];
 
 export function Pricing() {
     return (
@@ -198,6 +207,33 @@ export function Pricing() {
                         Rezerwacja odbywa się przez system Kluby.org
                     </p>
                 </motion.div>
+                <div className="bg-white rounded-3xl p-8 md:p-12 border border-gray-200 shadow-sm text-center mt-5">
+                    <div className="inline-flex items-center gap-2 bg-blue-50 text-[var(--color-primary)] px-4 py-1.5 rounded-full text-sm font-bold mb-6">
+                        <Info size={18} />
+                        Honorujemy Karty Sportowe
+                    </div>
+
+                    <h3 className="text-2xl md:text-3xl font-heading font-bold text-gray-900 mb-4">
+                        Masz kartę sportową?
+                    </h3>
+                    <p className="text-gray-600 max-w-2xl mx-auto mb-10">
+                        Z kartą <strong>MultiSport, FitProfit, PZU Sport lub Medicover</strong> wchodzisz na zajęcia grupowe Intro oraz wybrane wydarzenia całkowicie za darmo lub z dużą zniżką. Pamiętaj o odbiciu karty w recepcji przed grą!
+                    </p>
+
+                    <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 grayscale hover:grayscale-0 transition-all duration-500">
+                        {cards.map((card, idx) => (
+                            <div key={idx} className="relative h-12 w-32 md:h-16 md:w-40 opacity-70 hover:opacity-100 transition-opacity">
+                                <Image
+                                    src={`/discount/${card.src}`} // Ścieżka do folderu discount
+                                    alt={`Honorujemy kartę ${card.name}`}
+                                    fill
+                                    className="object-contain"
+                                    sizes="(max-width: 768px) 128px, 160px"
+                                />
+                            </div>
+                        ))}
+                    </div>
+                </div>
 
             </div>
         </section>

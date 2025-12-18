@@ -8,10 +8,22 @@ import {
     HeartPulse,
     CheckCircle2,
     ArrowRight,
-    Dices
+    Dices,
+    GraduationCap,
+    Swords
 } from "lucide-react";
 
 const eventTypes = [
+    {
+        id: "intro",
+        title: "Wstęp do Padla (Intro)",
+        subtitle: "Twój Pierwszy Krok",
+        description: "Idealne na start! To zajęcia z trenerem dedykowane osobom, które nigdy nie grały lub chcą ugruntować podstawy. Nauczysz się chwytu, podstawowych uderzeń, zasad punktacji i poruszania się po korcie. Bezpieczna atmosfera i zero stresu – tutaj każdy się uczy.",
+        icon: GraduationCap,
+        color: "bg-green-50 text-green-600 border-green-200",
+        features: ["Nauka od zera", "Sprzęt w cenie", "Zrozumienie zasad"],
+        image: "/offer/events.webp"
+    },
     {
         id: "mexicano",
         title: "Mexicano",
@@ -32,6 +44,16 @@ const eventTypes = [
         icon: Dices,
         color: "bg-blue-50 text-blue-600 border-blue-200",
         features: ["Zapisy bez partnera", "Całkowicie losowe pary", "Idealne na start"],
+        image: "/offer/events.webp"
+    },
+    {
+        id: "matchplay",
+        title: "Matchplay z Trenerem",
+        subtitle: "Taktyka w Praktyce",
+        description: "Gra na punkty, w której czwartym zawodnikiem jest trener. To nie jest suchy trening techniczny – tu uczysz się 'czytać grę'. Trener na bieżąco tłumaczy zasady taktyczne: jak konstruować akcję, kiedy zagrać loba, jak się ustawiać przy siatce i jak zamykać wymiany. Najlepszy sposób na wejście w świat turniejowy.",
+        icon: Swords,
+        color: "bg-red-50 text-red-600 border-red-200",
+        features: ["Zawsze 3 graczy + Trener", "Wskazówki na żywo", "Nauka taktyki"],
         image: "/offer/events.webp"
     },
     {
