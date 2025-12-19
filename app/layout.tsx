@@ -16,7 +16,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-    metadataBase: new URL("https://gdyniapadelclub.pl"), // <--- TU WPISZ SWOJĄ DOMENĘ
+    metadataBase: new URL("https://gdyniapadelclub.pl"),
+    alternates: {
+        canonical: './', // To automatycznie wygeneruje poprawny canonical dla każdej podstrony
+    },// <--- TU WPISZ SWOJĄ DOMENĘ
     title: {
         default: "Gdynia Padel Club - Najlepsze korty w Trójmieście",
         template: "%s | Gdynia Padel Club", // Np. "Liga | Gdynia Padel Club"
@@ -59,8 +62,46 @@ export default function RootLayout({
 
         {/* Tutaj renderujemy tylko dzieci. Navbar i Footer znikają stąd. */}
         {children}
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "SportsActivityLocation",
+                    "name": "Gdynia Padel Club",
+                    "image": "https://gdyniapadelclub.pl/logo.svg", // Zmień na .jpg/.png dla lepszej kompatybilności
+                    "url": "https://gdyniapadelclub.pl",
+                    "telephone": "+48534044544",
+                    "email": "kontakt@gdyniapadelclub.pl",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "ul. Zamenhofa 17",
+                        "addressLocality": "Gdynia",
+                        "postalCode": "81-118",
+                        "addressCountry": "PL"
+                    },
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 54.53613906708277, // Uzupełnij dokładne współrzędne z Google Maps
+                        "longitude": 18.48347306907381
+                    },
+                    "openingHoursSpecification": [
+                        {
+                            "@type": "OpeningHoursSpecification",
+                            "dayOfWeek": [
+                                "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+                            ],
+                            "opens": "06:00",
+                            "closes": "23:59"
+                        }
+                    ],
+                    "priceRange": "$$" // Lub konkretne ceny
+                })
+            }}
+        />
         </body>
         <GoogleAnalytics gaId={'G-4SEF90B4E9'} />
+
         </html>
     );
 }

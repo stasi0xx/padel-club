@@ -18,7 +18,9 @@ import {NextTournament} from "@/components/offer/tournaments/NextTournament";
 import {TournamentRules} from "@/components/offer/tournaments/TournamentRules";
 import { getTournament } from "@/app/actions/tournament-actions";
 import { EventOrganization } from "@/components/offer/EventOrganization";
-import { Metadata } from "next";
+import { Metadata } from "next"
+import { getProducts } from "@/app/actions/shop-actions"; // <--- Import
+import { ShopGrid } from "@/components/offer/ShopGrid";
 // <--- IMPORT
 
 // ... (generateStaticParams i generateMetadata bez zmian) ...
@@ -77,6 +79,10 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
     const isIndividualPage = offer.slug === 'treningi-indywidualne';
     const isTournamentPage = offer.slug === 'turnieje';
     const isBusinessPage = offer.slug === 'biznes';
+    const isShopPage = offer.slug === 'sklep'; // <--- Nowy warunek
+
+    // Pobieramy produkty TYLKO jeśli to strona sklepu
+    const productsData = isShopPage ? await getProducts() : [];
     const scheduleData = (isTrainingPage || isKidsPage) ? await getSchedule() : [];
     const tournamentData = isTournamentPage ? await getTournament() : null;
 
@@ -212,7 +218,18 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
                             <EventOrganization />
                         </>
 
-                    ): (
+                    ) : isShopPage ? (
+                        <>
+                            <div
+                                className="prose prose-lg prose-blue max-w-none text-gray-600 mb-8"
+                                dangerouslySetInnerHTML={{ __html: offer.description }}
+                            />
+
+                            {/* WSTRZYKUJEMY SKLEP */}
+                            <ShopGrid products={productsData} />
+                        </>
+
+                    ) : (
                         // STANDARD DLA RESZTY
                         <div
                             className="prose prose-lg prose-blue max-w-none text-gray-600"

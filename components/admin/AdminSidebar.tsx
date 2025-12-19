@@ -12,13 +12,19 @@ import {
     LogOut,
     Home,
     Menu, // <--- Ikona Hamburgera
-    X     // <--- Ikona Zamknięcia
+    X,
+    ShoppingBag// <--- Ikona Zamknięcia
 } from "lucide-react";
 
 const navItems = [
     { label: "Aktualności", href: "/admin/add", icon: PlusCircle },
     { label: "Grafik Treningów", href: "/admin/grafik", icon: CalendarDays },
     { label: "Turnieje", href: "/admin/turnieje", icon: Trophy },
+    {
+        label: "Sklep",
+        href: "/admin/sklep",
+        icon: ShoppingBag
+    },
 ];
 
 export function AdminSidebar() {

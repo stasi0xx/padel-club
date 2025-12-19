@@ -15,11 +15,11 @@ export function Hero() {
                     autoPlay
                     loop
                     muted
-                    playsInline // KLUCZOWE dla iOS - bez tego wideo odpali się na pełnym ekranie// Plik .jpg (klatka z filmu), który wyświetla się ZANIM wideo się załaduje. Zrób screenshota z filmu.
+                    playsInline
+                    poster="/offer/biznes.webp"// KLUCZOWE dla iOS - bez tego wideo odpali się na pełnym ekranie// Plik .jpg (klatka z filmu), który wyświetla się ZANIM wideo się załaduje. Zrób screenshota z filmu.
                     className="w-full h-full object-cover"
                 >
                     {/* Kolejność ma znaczenie: przeglądarka weźmie pierwszy format, który obsługuje */}
-                    <source src="/hero.webm" type="video/webm" />
                     <source src="/hero.mp4" type="video/mp4" />
 
                     {/* Tekst alternatywny dla bardzo starych przeglądarek */}

@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { createClient } from "@/lib/supabase/client"; // Używamy klienta przeglądarkowego
 import { useRouter } from "next/navigation";
-import { Lock, Mail, Loader2 } from "lucide-react";
+import {Lock, Mail, Loader2, ArrowLeft} from "lucide-react";
+import Link from "next/link";
 
 export default function LoginPage() {
     const [email, setEmail] = useState("");
@@ -91,6 +92,15 @@ export default function LoginPage() {
                             {loading ? <Loader2 className="animate-spin" /> : "Zaloguj się"}
                         </button>
                     </form>
+                </div>
+                <div className={'mt-5'}>
+                    <Link
+                        href="/"
+                        className="group flex items-center gap-2 px-8 py-3 bg-white border border-gray-200 text-gray-900 font-bold rounded-full hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition-all shadow-sm"
+                    >
+                        <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
+                        Wróć do strony głównej
+                    </Link>
                 </div>
             </div>
         </div>
