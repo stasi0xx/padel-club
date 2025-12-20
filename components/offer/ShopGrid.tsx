@@ -164,9 +164,6 @@ export function ShopGrid({ products }: { products: Product[] }) {
                     <h2 className="text-3xl md:text-4xl font-heading font-black mb-4">
                         Szukasz profesjonalnego sprzętu?
                     </h2>
-                    <p className="text-lg text-blue-100 mb-8 font-medium">
-                        Współpracujemy z najlepszymi. Szeroki wybór rakiet, butów i akcesoriów znajdziesz u naszego partnera.
-                    </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <a href="https://www.padelboom.pl/" target="_blank" className="bg-white text-[var(--color-primary)] font-black py-4 px-8 rounded-xl hover:bg-blue-50 transition-transform hover:scale-105 flex items-center justify-center gap-2">
                             Przejdź do PadelBoom.pl <ArrowUpRight size={20} />
