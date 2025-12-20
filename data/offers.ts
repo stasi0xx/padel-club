@@ -56,7 +56,7 @@ export const offersData: OfferDetail[] = [
         features: [
             "Zapisy bez partnera",
             "Każda piłka to punkt",
-            "DJ i Grill na Nocnym Graniu",
+            "Muzyka i Grill na Nocnym Graniu",
             "Śniadanie na Pilatesie" // Dodano kluczowy wyróżnik
         ],
         ctaLink: "https://kluby.org/gdynia-padel-club/wydarzenia",
