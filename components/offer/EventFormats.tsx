@@ -60,10 +60,10 @@ const eventTypes = [
         id: "night",
         title: "Nocne Granie",
         subtitle: "Turniej & Party", // Zmiana podtytułu na bardziej "eventowy"
-        description: "Najlepszy sposób na rozpoczęcie weekendu. Gramy pełnoprawny turniej (Mexicano lub Americano - zależnie od edycji), więc emocje sportowe są gwarantowane. Różnica? O klimat dba DJ na żywo, a po turnieju (lub w trakcie) wjeżdża pizza lub odpalamy grilla (w sezonie). Sport, muzyka i jedzenie w jednym pakiecie.",
+        description: "Najlepszy sposób na rozpoczęcie weekendu. Gramy mini turnieje lub luźne rozgrywki. O klimat dba dobra muzyka, a po graniu (lub w trakcie) wjeżdża pizza lub odpalamy grilla (w sezonie). Sport, muzyka i jedzenie w jednym pakiecie.",
         icon: Moon,
         color: "bg-purple-50 text-purple-600 border-purple-200",
-        features: ["Format Turniejowy", "DJ na żywo", "Pizza / Grill"], // Konkretne benefity
+        features: ["Format mini turnieje/luźne rozgrywki", "Dobra muzyka", "Pizza / Grill"], // Konkretne benefity
         image: "/offer/events.webp"
     },
     {

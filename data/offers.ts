@@ -80,7 +80,7 @@ export const offersData: OfferDetail[] = [
         image: "/offer/kids.webp",
         icon: Smile,
         description: '',
-        features: ["Zajęcia od 5. roku życia", "Sprzęt dla dzieci", "Bezpieczna infrastruktura", "Zabawy ruchowe"],
+        features: ["Zajęcia od 6    . roku życia", "Sprzęt dla dzieci", "Bezpieczna infrastruktura", "Zabawy ruchowe"],
         ctaLink: "https://kluby.org/gdynia-padel-club/zapisy",
         ctaText: "Zapisz dziecko",
     },
