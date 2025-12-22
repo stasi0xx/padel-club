@@ -113,9 +113,6 @@ export function Footer() {
                                 <Mail className="flex-shrink-0 text-[var(--color-primary)]" size={18} />
                                 <a href="mailto:recepcja@gdyniapadelclub.pl" className="hover:text-white transition-colors">
                                     recepcja@gdyniapadelclub.pl
-                                </a><br/>
-                                <a href="mailto:gdyniapadelclub@gmail.com" className="hover:text-white transition-colors">
-                                    gdyniapadelclub@gmail.com
                                 </a>
                             </li>
                             <li className="flex items-start gap-3">

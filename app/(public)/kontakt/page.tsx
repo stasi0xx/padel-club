@@ -67,9 +67,6 @@ export default function ContactPage() {
                                         <a href="mailto:recepcja@gdyniapadelclub.pl" className="text-lg font-bold text-gray-900 hover:text-[var(--color-primary)] transition-colors">
                                             recepcja@gdyniapadelclub.pl
                                         </a>
-                                        <a href="mailto:gdyniapadelclub@gmail.com" className="text-lg font-bold text-gray-900 hover:text-[var(--color-primary)] transition-colors">
-                                            gdyniapadelclub@gmail.com
-                                        </a>
                                     </div>
                                 </div>
 
