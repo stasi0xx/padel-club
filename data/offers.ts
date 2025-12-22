@@ -319,7 +319,7 @@ export const offersData: OfferDetail[] = [
             "Strefa Grill (Lato)",
             "Obsługa Trenerów"
         ],
-        ctaLink: "mailto:kontakt@gdyniapadel.pl",
+        ctaLink: "mailto:recepcja@gdyniapadelclub.pl",
         ctaText: "Zapytaj o ofertę",
     },
 ];

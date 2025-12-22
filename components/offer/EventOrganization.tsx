@@ -30,7 +30,7 @@ export function EventOrganization() {
     const [copied, setCopied] = useState(false);
 
     const handleCopyEmail = () => {
-        navigator.clipboard.writeText("kontakt@gdyniapadel.pl");
+        navigator.clipboard.writeText("recepcja@gdyniapadelclub.pl");
         setCopied(true);
         // Resetujemy stan po 2 sekundach
         setTimeout(() => setCopied(false), 2000);
@@ -148,7 +148,7 @@ export function EventOrganization() {
                                     <span className="block text-xs text-gray-400 font-bold uppercase">Napisz maila</span>
                                     {/* break-all zapewnia, że długi mail nie wyjdzie poza kontener */}
                                     <span className="block text-lg font-bold text-gray-900 break-all leading-tight">
-                                        kontakt@gdyniapadel.pl
+                                        recepcja@gdyniapadelclub.pl
                                     </span>
                                 </div>
 

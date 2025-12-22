@@ -72,7 +72,7 @@ export default function RootLayout({
                     "image": "https://gdyniapadelclub.pl/logo.svg", // Zmień na .jpg/.png dla lepszej kompatybilności
                     "url": "https://gdyniapadelclub.pl",
                     "telephone": "+48534044544",
-                    "email": "kontakt@gdyniapadelclub.pl",
+                    "email": "recepcja@gdyniapadelclub.pl",
                     "address": {
                         "@type": "PostalAddress",
                         "streetAddress": "ul. Zamenhofa 17",

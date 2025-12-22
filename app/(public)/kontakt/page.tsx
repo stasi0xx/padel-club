@@ -64,8 +64,11 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <p className="text-sm text-gray-500 font-medium mb-1">Napisz maila</p>
-                                        <a href="mailto:kontakt@gdyniapadelclub.pl" className="text-lg font-bold text-gray-900 hover:text-[var(--color-primary)] transition-colors">
-                                            kontakt@gdyniapadelclub.pl
+                                        <a href="mailto:recepcja@gdyniapadelclub.pl" className="text-lg font-bold text-gray-900 hover:text-[var(--color-primary)] transition-colors">
+                                            recepcja@gdyniapadelclub.pl
+                                        </a>
+                                        <a href="mailto:gdyniapadelclub@gmail.com" className="text-lg font-bold text-gray-900 hover:text-[var(--color-primary)] transition-colors">
+                                            gdyniapadelclub@gmail.com
                                         </a>
                                     </div>
                                 </div>

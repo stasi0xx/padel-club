@@ -82,7 +82,7 @@ export default function RegulationsPage() {
                     <section>
                         <h2>6. Postanowienia Końcowe</h2>
                         <p>
-                            W sprawach nieuregulowanych niniejszym Regulaminem decyduje obsługa Klubu. Wszelkie skargi i wnioski prosimy kierować na adres e-mail: <a href="mailto:kontakt@gdyniapadelclub.pl">kontakt@gdyniapadelclub.pl</a>.
+                            W sprawach nieuregulowanych niniejszym Regulaminem decyduje obsługa Klubu. Wszelkie skargi i wnioski prosimy kierować na adres e-mail: <a href="mailto:recepcja@gdyniapadelclub.pl">recepcja@gdyniapadelclub.pl</a>.
                         </p>
                     </section>
 
