@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
                     <section className="mb-10">
                         <h2>2. Administrator Danych</h2>
                         <p>
-                            Administratorem danych osobowych (w zakresie korespondencji mailowej lub plików cookies) jest <strong>Gdynia Padel Club</strong> z siedzibą w Gdyni przy ul. Zamenhofa 17, 81-118 Gdynia.
+                            Administratorem danych osobowych (w zakresie korespondencji mailowej lub plików cookies) jest <strong>Gdynia Padel Club</strong> z siedzibą w Gdyni przy ul. Zamenhofa 17, 81-218 Gdynia.
                         </p>
                         <p>
                             Kontakt z Administratorem jest możliwy drogą elektroniczną pod adresem: <a href="mailto:recepcja@gdyniapadelclub.pl" className="text-[var(--color-primary)] font-bold no-underline hover:underline">recepcja@gdyniapadelclub.pl</a>.

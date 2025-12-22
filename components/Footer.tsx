@@ -100,7 +100,7 @@ export function Footer() {
                             <li className="flex items-start gap-3">
                                 <MapPin className="flex-shrink-0 text-[var(--color-primary)] mt-0.5" size={18} />
                                 <span className="text-gray-400">
-                  ul. Zamenhofa 17,<br />81-118 Gdynia
+                  ul. Zamenhofa 17,<br />81-218 Gdynia
                 </span>
                             </li>
                             <li className="flex items-center gap-3">
@@ -144,7 +144,7 @@ export function Footer() {
 
                         {/* Przycisk "Jak dojechać" na mapie */}
                         <a
-                            href="https://www.google.com/maps/dir//ul.+Zamenhofa+17,+81-118+Gdynia"
+                            href="https://www.google.com/maps/dir//ul.+Zamenhofa+17,+81-218+Gdynia"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm text-black text-xs font-bold py-2 rounded text-center hover:bg-[var(--color-primary)] hover:text-white transition-colors shadow-lg uppercase tracking-wide"

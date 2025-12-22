@@ -77,7 +77,7 @@ export default function RootLayout({
                         "@type": "PostalAddress",
                         "streetAddress": "ul. Zamenhofa 17",
                         "addressLocality": "Gdynia",
-                        "postalCode": "81-118",
+                        "postalCode": "81-218",
                         "addressCountry": "PL"
                     },
                     "geo": {
