@@ -25,6 +25,11 @@ const navItems = [
         href: "/admin/sklep",
         icon: ShoppingBag
     },
+    {
+        label: "Zarządzaj Cennikiem",
+        href: "/admin/cennik",
+        icon: ShoppingBag // lub inna ikona np. Banknote
+    },
 ];
 
 export function AdminSidebar() {
