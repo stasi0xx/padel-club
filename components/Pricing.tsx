@@ -47,8 +47,8 @@ const pricingPlans: PricingPlan[] = [
         icon: Users,
         description: "Zajęcia z trenerem w grupie.",
         items: [
-            { label: "Pon - Pt do 16:00", price: "60 zł" },
-            { label: "Pon - Pt po 16:00", price: "70 zł" },
+            { label: "Pon - Pt do 16:00", price: "65 zł" },
+            { label: "Pon - Pt po 16:00", price: "75 zł" },
         ],
     },
     {
@@ -66,7 +66,10 @@ const pricingPlans: PricingPlan[] = [
         description: "1 na 1 z trenerem dla szybkiego progresu.",
         highlight: true,
         items: [
-            { label: "Cena za trening", price: "100 zł" },
+            { label: "Cena za 1os", price: "100 zł" },
+            { label: "Cena za 2os", price: "120 zł" },
+            { label: "Cena za 3os", price: "130 zł" },
+            { label: "Cena za 4os", price: "140 zł" },
             // Tutaj TypeScript już wie, że isNote jest dozwolone
             { label: "Dodatkowo", price: "+ koszt kortu", isNote: true },
         ],
