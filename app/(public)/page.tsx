@@ -1,22 +1,22 @@
 import { Hero } from "@/components/Hero";
-import {Offer} from "@/components/Offer";
-import {Pricing} from "@/components/Pricing";
-import {Features} from "@/components/Features";
-import {Gallery} from "@/components/Gallery";
-import {NewsHome} from "@/components/NewsHome";
+import { Offer } from "@/components/Offer";
+import { Pricing } from "@/components/Pricing";
+import { Features } from "@/components/Features";
+import { Gallery } from "@/components/Gallery";
+
 
 export default function Home() {
   return (
-      <main className="min-h-screen flex flex-col">
+    <main className="min-h-screen flex flex-col">
 
 
-        <Hero />
-        <Offer />
-          <Features />
-          <Pricing />
-          <Gallery />
-          <NewsHome />
+      <Hero />
+      <Offer />
+      <Features />
+      <Pricing />
+      <Gallery />
 
-      </main>
+
+    </main>
   );
 }

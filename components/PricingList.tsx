@@ -99,16 +99,16 @@ export function PricingList({ plans }: PricingListProps) {
                                     {plan.items.map((item, idx) => (
                                         <div
                                             key={idx}
-                                            className="flex justify-between items-center border-b border-gray-50 pb-2 last:border-0 last:pb-0"
+                                            className="flex justify-between items-center border-b border-gray-50 pb-2 last:border-0 last:pb-0 gap-4"
                                         >
                       <span className="text-gray-600 font-medium text-sm">
                         {item.label}
                       </span>
                                             <span
-                                                className={`font-bold ${
+                                                className={`font-bold whitespace-nowrap flex-shrink-0 ${
                                                     item.isNote
-                                                        ? "text-sm text-gray-500"
-                                                        : "text-lg text-[var(--color-primary)]"
+                                                        ? "text-sm text-gray-500 text-right"
+                                                        : "text-lg text-[var(--color-primary)] text-right"
                                                 }`}
                                             >
                         {item.price}
