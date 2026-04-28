@@ -167,15 +167,10 @@ export const offersData: OfferDetail[] = [
                     "💪🏽Kuba na korcie daje z siebie wszystko i tego samego chce nauczyć swoich zawodników.\n"
             },
             {
-                name: "Sebastian",
-                image: "/trainers/sebastian.png",
+                name: "Julia",
+                image: "/trainers/julia.png",
                 specialties: ["Treningi indywidualne", "Treningi grupowe", "Matchplay"],
-                description: " przedstawiamy Wam naszego trenera Sebastiana 🤚🏽 \n" +
-                    "🔥Certyfikowany trener padla, ukończył kurs w MS Academy 🏅\n" +
-                    "🏆 Jest wielokrotnym medalistą na turniejach padlowych.\n" +
-                    "➡️W pracy trenerskiej stawia na zrozumienie gry, rozwój techniki i indywidualne podejście do każdego zawodnika.\n" +
-                    "🧨 Jego podejście to: „Nie wierzę w „sztywne schematy” — wierzę w dopasowanie treningu do Twoich potrzeb, stylu i poziomu gry.\n" +
-                    "Moją misją jest sprawić, żebyś nie tylko grał lepiej, ale też rozumiał padla, czuł radość z każdego punktu i widział swój postęp z tygodnia na tydzień”.💪"
+                description: "Przedstawiamy JULIĘ, którą dobrze znacie, bo jest z nami od samego początku ❤️\n🎾 Z padlem związana jest od 2021 roku a od 2023 roku prowadzi treningi w naszym klubie\n🏅 Certyfikowana instruktorka padla – ukończyła kurs instruktorski w MS Academy\n🎓 Jest absolwentką studiów fizjoterapii, dzięki czemu doskonale rozumie pracę ciała i biomechanikę ruchu\n🏆 Jej największe osiągnięcie sportowe w padlu to 4. miejsce na Mistrzostwach Polski Kobiet\n🏃‍♀️ Ma sportowe korzenie – przez lata trenowała bieganie wyczynowo i zdobywała medale Mistrzostw Polski, dlatego na korcie ogromną uwagę przykłada do pracy nóg i wytrzymałości\n💪 Jej treningi są dynamiczne, intensywne i pełne energii, ale zawsze prowadzone w miłej, pozytywnej atmosferze"
             },
             {
                 name: "Mariusz",
@@ -190,16 +185,7 @@ export const offersData: OfferDetail[] = [
                     "🏃‍♂️ Aktywnie spędza czas i promuję zdrowy, zrównoważony styl życia\n" +
                     "⚡ Podobno najszybszy na korcie – a niespodziewane zagrania to jego główny atut 😉"
             },
-            {
-                name: "Paweł",
-                image: "/trainers/pawel.png",
-                specialties: ["Treningi indywidualne", "Treningi grupowe", "Matchplay"],
-                description: "Kilka słów o Pawle ✌🏽\n" +
-                    "🎾Z tenisem jest związany już ponad 21 lat – zaczynał jako zawodnik, a w 2012 roku uzyskał tytuł trenera tenisa na AWFiS w Gdańsku. \n" +
-                    "📕Jest również absolwentem Akademii Wychowania Fizycznego i Sportu w Gdańsku, gdzie zdobył solidne podstawy do pracy trenerskiej.\n" +
-                    "💪🏽Na treningach stawia na technikę, zrozumienie gry i indywidualne podejście – bo każdy zawodnik ma swoją własną drogę do lepszego tenisa/padla 🎾\n" +
-                    "➡️W 2022 roku poznał padla, który totalnie go wciągnął. Teraz chcę połączyć swoje doświadczenie trenerskie z nową pasją i pomagać innym odkrywać, jak dużo frajdy daje gra w padla! 🔥"
-            },
+
             {
                 name: "Jaro",
                 image: "/trainers/jaro.png",
