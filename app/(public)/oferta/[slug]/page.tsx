@@ -7,15 +7,15 @@ import { TrainersGrid } from "@/components/TrainersGrid";
 import { EventFormats } from "@/components/offer/EventFormats";
 import { getSchedule } from "@/app/actions/schedule-actions";
 import { TrainingSchedule } from "@/components/offer/TrainingSchedule";
-import {LevelDescriptions} from "@/components/offer/LevelDescriptions";
+import { LevelDescriptions } from "@/components/offer/LevelDescriptions";
 import { KidsBenefits } from "@/components/offer/kids/KidsBenefits";
 import { PromoVideo } from "@/components/offer/kids/PromoVideo";
 import { KidsSchedule } from "@/components/offer/kids/KidsSchedule";
-import {LeagueInfo} from "@/components/offer/league/LeagueInfo";
-import {LeagueFormats} from "@/components/offer/league/LeagueFormats";
-import {IndividualTraining} from "@/components/offer/IndividualTraining";
-import {NextTournament} from "@/components/offer/tournaments/NextTournament";
-import {TournamentRules} from "@/components/offer/tournaments/TournamentRules";
+import { LeagueInfo } from "@/components/offer/league/LeagueInfo";
+import { LeagueFormats } from "@/components/offer/league/LeagueFormats";
+import { IndividualTraining } from "@/components/offer/IndividualTraining";
+import { NextTournament } from "@/components/offer/tournaments/NextTournament";
+import { TournamentRules } from "@/components/offer/tournaments/TournamentRules";
 import { getTournament } from "@/app/actions/tournament-actions";
 import { EventOrganization } from "@/components/offer/EventOrganization";
 import { Metadata } from "next"
@@ -144,13 +144,10 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
                     ) : isTrainingPage ? (
                         // <--- TU WPADA GRAFIK DLA TRENINGÓW
                         <>
-                            <div
-                                className="prose prose-lg prose-blue max-w-none text-gray-600 mb-12"
-                                dangerouslySetInnerHTML={{ __html: offer.description }}
-                            />
+
                             {/* PRZEKAZUJEMY DANE Z BAZY DO KOMPONENTU */}
                             <LevelDescriptions />
-                            <TrainingSchedule scheduleData={scheduleData} />
+
                         </>
                     ) : isKidsPage ? (
 
@@ -199,8 +196,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
                                 className="prose prose-lg prose-blue max-w-none text-gray-600 mb-8"
                             />
 
-                            {/* 1. Najbliższy Turniej (Baner) */}
-                            <NextTournament data={tournamentData}/>
+
 
                             {/* 2. Zasady i Kategorie */}
                             <TournamentRules />
