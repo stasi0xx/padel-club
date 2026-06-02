@@ -52,8 +52,8 @@ export default function RegulationsPage() {
                             <li>
                                 <strong>Anulowanie rezerwacji:</strong>
                                 <ul className="list-disc pl-5 mt-2">
-                                    <li>Bezkosztowe anulowanie rezerwacji jest możliwe najpóźniej na <strong>24 godziny</strong> przed planowanym terminem gry. W takim przypadku uiszczona opłata zostanie zwrócona (lub zapisana jako środki do wykorzystania, zgodnie z polityką systemu Kluby.org).</li>
-                                    <li>W przypadku anulowania rezerwacji na <strong>mniej niż 24 godziny</strong> przed terminem, opłata za kort <strong>nie podlega zwrotowi</strong>.</li>
+                                    <li>Bezkosztowe anulowanie rezerwacji jest możliwe najpóźniej na <strong>48 godzin</strong> przed planowanym terminem gry. W takim przypadku uiszczona opłata zostanie zwrócona (lub zapisana jako środki do wykorzystania, zgodnie z polityką systemu Kluby.org).</li>
+                                    <li>W przypadku anulowania rezerwacji na <strong> mniej niż 48 godziny</strong> przed terminem, opłata za kort <strong>nie podlega zwrotowi</strong>.</li>
                                 </ul>
                             </li>
                             <li>Klub zastrzega sobie prawo do odwołania rezerwacji z przyczyn technicznych lub niezależnych (np. awaria oświetlenia, ekstremalne warunki pogodowe na kortach otwartych). W takim przypadku Klient otrzyma pełny zwrot środków lub propozycję innego terminu.</li>
